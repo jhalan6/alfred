@@ -4,5 +4,8 @@ learn:
 of:
 	zip -j omnifocus.alfredworkflow ./omnifocus/src/*
 
+qof:
+	zip -j qof.alfredworkflow ./quick_import_of/src/*
+
 clean:
 	rm *.alfredworkflow
