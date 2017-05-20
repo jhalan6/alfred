@@ -1,100 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>bundleid</key>
-	<string>cn.jhalancsh.omnifocus.import</string>
-	<key>connections</key>
-	<dict>
-		<key>258E1546-81FE-4F9E-9282-F40F4A667DBE</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>8420718B-E3F1-4AFF-B610-8CB3879C3059</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-	</dict>
-	<key>createdby</key>
-	<string>jhalancsh@gmail.com</string>
-	<key>description</key>
-	<string>omnifocuse quick import</string>
-	<key>disabled</key>
-	<false/>
-	<key>name</key>
-	<string>of</string>
-	<key>objects</key>
-	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>on run argv	set theQuery to item 1 of argv	tell front document of application "OmniFocus"		set parentTask to make new inbox task with properties {name:theQuery}		set listContents to get the clipboard		set delimitedList to paragraphs of listContents		tell parentTask			repeat with currentTodo in delimitedList				make task with properties {name:currentTodo}			end repeat		end tell	end tellend run</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>8420718B-E3F1-4AFF-B610-8CB3879C3059</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>cof</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>从剪切板导入omnifocus任务</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>258E1546-81FE-4F9E-9282-F40F4A667DBE</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-	</array>
-	<key>readme</key>
-	<string>omnifocus quick import</string>
-	<key>uidata</key>
-	<dict>
-		<key>258E1546-81FE-4F9E-9282-F40F4A667DBE</key>
-		<dict>
-			<key>xpos</key>
-			<integer>200</integer>
-			<key>ypos</key>
-			<integer>200</integer>
-		</dict>
-		<key>8420718B-E3F1-4AFF-B610-8CB3879C3059</key>
-		<dict>
-			<key>xpos</key>
-			<integer>500</integer>
-			<key>ypos</key>
-			<integer>200</integer>
-		</dict>
-	</dict>
-	<key>webaddress</key>
-	<string>jhalancsh.cn</string>
-</dict>
-</plist>
