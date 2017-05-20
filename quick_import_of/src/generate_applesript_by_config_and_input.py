@@ -4,7 +4,7 @@ import sys
 import os
 import json
 import commands
-# import alfred
+import alfred
 
 
 def byteify(input):
@@ -99,14 +99,19 @@ def parse_task_resource_to_applescript(task):
 
 
 def main():
+    result = []
     config_tag = sys.argv[1]
     query = sys.argv[2:]
     config = get_config_from_param(config_tag)
     if not config:
-        return
+        result.append(alfred.Item({"uid": alfred.uid(1)},
+                                    config_tag, config.get("parse", ""), None))
+        alfred.write(alfred.xml(result))
     user_def_param = get_user_def_param(query, config.get("parse", ""))
     if not user_def_param:
-        return
+        result.append(alfred.Item({"uid": alfred.uid(1)},
+                                    config_tag, config.get("parse", ""), None))
+        alfred.write(alfred.xml(result))
 
     task_resource = \
         parse_task_resource_from_config_and_user_def_param(config,
@@ -116,7 +121,9 @@ def main():
     # pprint(user_def_param)
     # pprint(task_resource)
     script = parse_task_resource_to_applescript(task_resource)
-    print script,
+    result.append(alfred.Item({"uid": alfred.uid(1), "arg": script},
+                                    config_tag, config.get("parse", ""), None))
+    alfred.write(alfred.xml(result))
 
 if __name__ == "__main__":
     main()

@@ -54,7 +54,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>python generate_applesript_by_config_and_input.py $1</string>
+                <string>python generate_applesript_by_config_and_input.py {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>

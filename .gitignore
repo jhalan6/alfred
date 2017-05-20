@@ -1,3 +1,4 @@
 *.pyc
 *.alfredworkflow
 .DS_Store
+.ropeproject
